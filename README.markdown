@@ -1,3 +1,6 @@
+# About this fork...
+The plan is to adapt the recipes for yum-based enviornments (CentOS, RedHat, etc).
+
 # Passenger stack, zero to hero in under five minutes
 Scripts for [Sprinkle](http://github.com/crafterm/sprinkle/ "Sprinkle"), the provisioning tool
 
