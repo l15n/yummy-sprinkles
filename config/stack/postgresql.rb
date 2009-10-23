@@ -1,6 +1,6 @@
 package :postgres, :provides => :database do
   description 'PostgreSQL database'
-  apt %w( postgresql postgresql-client libpq-dev )
+  yum %w( postgresql postgresql-server postgresql-libs postgresql-devel postgresql-contrib)
   
   verify do
     has_executable 'psql'
