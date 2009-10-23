@@ -13,3 +13,20 @@ package :git_dependencies do
   description 'Git Build Dependencies'
   apt 'git-core', :dependencies_only => true
 end
+
+package :subversion, :provides => :scm do
+  description 'Subversion: open source version control.'
+  version = '1.6.6'
+  download_path = "http://subversion.tigris.org/downloads"
+  subversion_deps = "subversion-deps-#{version}.tar.bz2"
+  source "#{download_path}/subversion-#{version}.tar.bz2" do
+    post :extract do # NOTE: working around buggy pre/post command merging
+        "wget -cq --directory-prefix=/usr/local/src #{download_path}/#{subversion_deps} && " +
+        "cd .. && tar xjf /usr/local/src/#{subversion_deps}"
+    end
+  end
+
+  verify do
+    has_executable '/usr/local/bin/svn'
+  end
+end
