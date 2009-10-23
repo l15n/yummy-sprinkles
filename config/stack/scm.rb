@@ -11,7 +11,7 @@ end
 
 package :git_dependencies do
   description 'Git Build Dependencies'
-  apt 'git-core', :dependencies_only => true
+  yum %w(expat-devel curl-devel zlib-devel openssl-devel)
 end
 
 package :subversion, :provides => :scm do
