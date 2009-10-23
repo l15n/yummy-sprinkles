@@ -1,6 +1,6 @@
 package :mysql, :provides => :database do
   description 'MySQL Database'
-  apt %w( mysql-server mysql-client libmysqlclient15-dev )
+  yum %w( mysql-server mysql mysql-devel )
   
   verify do
     has_executable 'mysql'
